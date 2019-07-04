@@ -1,0 +1,15 @@
+.Tracks{
+    max-width: 900px;
+    margin: 0 auto;
+    
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+@media screen and (max-width:600px){
+    .Tracks{
+        grid-template-columns: 1fr;
+    }
+}
