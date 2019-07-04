@@ -11,7 +11,7 @@ This app works by sending a GET request asychronously to an API. Which returns s
 
 Note: As this is a non-commercial API not many songs or lyrics are available.
 
-TIP: To get lyrics displayd to you for testing purposes
-      Search drake
-      click the get lyric button for Drake By: Afro Celt Sound System
-      lyrics should be displayed when redirected to a new page
+TIP: To get lyrics displayed to you for testing purposes,
+      Search drake,
+       click the get lyric button for Drake By: Afro Celt Sound System, 
+       lyrics should be displayed when redirected to a new page
