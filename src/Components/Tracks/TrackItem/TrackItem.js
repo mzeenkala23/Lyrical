@@ -6,7 +6,6 @@ function TrackItem(props){
     return(
         <div className={classes.TrackItem}>
             <h1>{props.name} </h1>  <span>By {props.artist} </span>
-            
             <Link to={{
                 pathname:`/songs-lyrics/${props.id}`,
                 state:{
@@ -19,6 +18,5 @@ function TrackItem(props){
         </div>
     )
 }
-
-
+            
 export default TrackItem

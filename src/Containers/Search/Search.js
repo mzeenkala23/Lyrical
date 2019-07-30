@@ -14,58 +14,39 @@ class Search extends Component{
         buttonDisabled:true
     }
 
-
-
     onchangeHandler=(e)=>{
         const input=e.target.value;
-        this.setState({searchInput:input})
-        
+        this.setState({searchInput:input})  
     }
 
     //Get requeuest to the API
-
-
-
     getSongs=async()=>{
         const query=this.state.searchInput
         this.setState({loading:true})
-        try{
-            
+        try{    
         const req = await axios.get(`https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.search?q_track=${query}&apikey=28958eed3d9049dbe0bba4c3111e51ea`)
-
         const tracks=req.data.message.body.track_list
         this.setState({trackList:tracks, loading:false
         })
-        // console.log(this.state.trackList[0].track.track_id)
-        // console.log(this.state.trackList[0].track)
         localStorage.setItem('songs',JSON.stringify(tracks))
-
         }catch(e){
-            console.log(e)
-            
+            console.log(e)   
         }
-
     }
 
     onSubmitHandler=(e)=>{
         e.preventDefault()
         this.getSongs();
-        
         this.setState({searchInput:''})
     }
 
     render(){
-        
         let DOMrender=null;
 
-            if(this.state.loading){
-                DOMrender=<Loader/>
-            }
-
-            // const storage=localStorage.getItem('songs')
-            // if(storage){
-            //     this.setState({trackList:storage});
-            // }    
+        if(this.state.loading){
+            DOMrender=<Loader/>
+        }
+  
         return(
             <React.Fragment >
                 <Form change={this.onchangeHandler} value={this.state.searchInput} submit={this.onSubmitHandler}/>
