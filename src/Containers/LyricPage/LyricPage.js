@@ -41,8 +41,7 @@ class LyricPage extends Component{
     
         return(
             <div className={classes.LyricPage}>
-               
-                <div className={classes.content} >   
+               <div className={classes.content} >   
                     <div className={classes.HeaderWrapper} >
                         <span>{this.state.TrackName} By:</span> <h1>{this.state.Artist} </h1> 
                     </div>
@@ -57,8 +56,5 @@ class LyricPage extends Component{
         )
     }
 }
-
-
-
 
 export default LyricPage
